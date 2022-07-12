@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+div {
+    
+    height: fit-content;
+    width: auto;
+    display:grid;
+    place-content:center;
+    
+
+}
+body{
+    margin:4%;
+    display:grid;
+    place-content:center;
+
+
+}
+#countryBtn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    background-color: rgb(29, 254, 198);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 6rem;
+    color: #E05D1E;
+    transition: 0.7s;
+
+}
+#countryBtn:hover{
+    
+    background-color: rgb(29, 254, 198,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#ddspan{
+    padding-top: 2.5rem;
+}
+#options{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    /* background-color: rgb(29, 254, 198); */
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+        
+    /* color: #E05D1E; */
+    transition: 0.7s;
+}
+#back-btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: rgb(29, 254, 198);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 10px;
+    color: #E05D1E;
+    transition: 0.7s;
+
+}
+#card{
+
+}
+#removeId{
+    padding: 50%;
+    padding-left: 50%;
+    padding-right: 50%;
+
+}

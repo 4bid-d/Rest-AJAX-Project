@@ -5,97 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ajax
-
-    </title>
+    <title>Countries</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  
 </head>
 
-<body>
+<body class="main-body">
 
-    <button onclick="" id="countryBtn">coutris</button>
-
-
-    <span id="ddspan"></span>
-
-    <span id="card"></span>
-
-    <script>
-
-        let button = document.getElementById('countryBtn')
-        let ddSpan = document.getElementById('ddspan')
-        let createDropDown = document.createElement('select')
-        createDropDown.setAttribute('id', 'options')
-        createDropDown.setAttribute('onchange', 'getDetails()')
-        let  data
-        let getDropDown
-        let filter
-
-        async function fetch() {
-
-            return new Promise((resolve, reject) => {
-                let xhr = new XMLHttpRequest()
-                
-                xhr.open('GET', 'https://restcountries.com/v2/all', true)
-                xhr.onload = function () {
-                    if (xhr.status != 200) { // analyze HTTP status of the response
-                        alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-                    } else { // show the result
-                        data = JSON.parse(this.response)
-                        
-                        // alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
-
-                        ddSpan.appendChild(createDropDown)
-
-                        getDropDown = document.getElementById('options')
-                        data.forEach(country => {
-
-                            let newOption = document.createElement('option')
-                            newOption.innerHTML = country.name
-                            getDropDown.appendChild(newOption)
-                        });
-                        
-                    }
-                };
-                xhr.send()
-
-            })
-        }
-
-        function getDetails() {
-            var selectedValue = document.getElementById("options").value;
-            const selectedValueDetailsDisplay = document.getElementById("card");
-            const createCard = document.createElement('div')
-            createCard.setAttribute('style', 'hieght:600px;width:200px;border:1px solid;')
-            const createflag = document.createElement('img')
-            createflag.setAttribute('style', 'hieght:150px;width:150px;')
-            const createCapital = document.createElement('p')
-            data.forEach(country => {
-                filter =
-                    data.filter(country =>
-                        country.name == selectedValue 
-                      )
-
-            });
-
-            filter.forEach(country=>{
+    <div class="main-div">
 
 
-                    createCapital.innerHTML = country.capital
-                    createflag.src = country.flag
-        
-        
-                    let appendedCard = selectedValueDetailsDisplay.appendChild(createCard)
-                    appendedCard.appendChild(createflag)
-                    appendedCard.appendChild(createCapital)
-                    console.log(country);
-            })
+    </div>
+    <div>
+        <span id="ddspan"></span>
 
-        }
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center;">
+        <span id="card" >
+            <span id="bk-btn"  style="float: right;"></span>
+        </span>
+    </div>
 
+    <script src="main.js"></script>
 
-        button.addEventListener('click', fetch)
-
-    </script>
 </body>
 
 </html>
