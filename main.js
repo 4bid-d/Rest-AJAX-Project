@@ -2,11 +2,8 @@
 
 let mainDiv = document.querySelector('.main-div')
 
-let backButton = document.createElement('button')
-backButton.id = 'back-btn'
-backButton.setAttribute ("onclick","window.location.reload()")    
-backButton.innerHTML = '<i class="bi bi-arrow-return-left"></i>  Back '
-let backBtnSpan = document.getElementById('bk-btn')
+
+
 
 let button = document.createElement('button')
 button.id = 'countryBtn'
@@ -39,7 +36,7 @@ async function fetchData() {
 
 
                 dropDownSpan.appendChild(createDropDown)
-
+               
                 getDropDown = document.getElementById('options')
                 data.forEach(country => {
 
@@ -64,13 +61,24 @@ function getDetails() {
     const selectedValueDetailsDisplay = document.getElementById("card");
 
     const createCard = document.createElement('div')
-    createCard.style ='border:1px solid;'
+    createCard.style =''
     createCard.id = 'removeId'
 
     const createflag = document.createElement('img')
     createflag.style = 'hieght:150px;width:150px;'
+    createflag.id = 'flag'
 
     const createCapital = document.createElement('p')
+    createCapital.id = 'capital'
+    const createName = document.createElement('h4')
+    createName.id = 'name'
+    const createLanguage = document.createElement('p')
+    createLanguage.id = 'language'
+    const createCurrency = document.createElement('p')
+    createCurrency.id = 'currency'
+    const createContinent = document.createElement('p')
+    createContinent.id = 'continent'
+   
 
     data.forEach(country => {
         filter =
@@ -82,17 +90,27 @@ function getDetails() {
 
     filter.forEach(country => {
 
-        button.remove()
-        createDropDown.remove()
+        
+     
         console.log(country);
-        backBtnSpan.appendChild(backButton)
-        createCapital.innerHTML = country.capital
+       
+        createCapital.innerHTML = `<strong>Capital </strong>: ${country.capital}`
         createflag.src = country.flag
+        createName.innerHTML = `<strong>Name  </strong>: ${country.name}`
+        createLanguage.innerHTML = `<strong>Language  </strong>: ${country.languages[0].name}`
+        createCurrency.innerHTML = `<strong>Currency  </strong>: ${country.currencies[0].name}`
+        createContinent.innerHTML = `<strong>Continent </strong> : ${country.region}`
+        
 
 
         let appendedCard = selectedValueDetailsDisplay.appendChild(createCard)
+        appendedCard.appendChild(createName)
         appendedCard.appendChild(createflag)
         appendedCard.appendChild(createCapital)
+        appendedCard.appendChild(createLanguage)
+        appendedCard.appendChild(createCurrency)
+        appendedCard.appendChild(createContinent)
+       
 
     })
 
