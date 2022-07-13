@@ -96,6 +96,7 @@ nav{
 #capital{
     color: #E05D1E;
     margin-left: 6rem;
+    display: flex;
 }
 #name{
     color: #E05D1E;
@@ -105,17 +106,19 @@ nav{
 #language{
     color: #E05D1E;
     margin-left: 6rem;
+    display: flex;
 
 }
 #currency{
     margin-left: 6rem;
-    
+    display: flex;
     color: #E05D1E;
 }
 #continent{
     color: #E05D1E; 
     margin-left: 6rem;
-    margin-bottom: -3rem;         
+    margin-bottom: -3rem;
+    display: flex;         
 }
 #flag{
     margin-left: -8rem;
